@@ -1,6 +1,6 @@
 app_calendario
 ==============
 
-App Node Calendario
+App NodeJS Calendario
 
 Utilizando YEOMAN http://yeoman.io/
