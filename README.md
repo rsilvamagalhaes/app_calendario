@@ -1,6 +1,6 @@
 app_calendario
 ==============
 
-App NodeJS Calendario
+App NodeJS, Angular, Mongodb Calendario
 
 Utilizando YEOMAN http://yeoman.io/
