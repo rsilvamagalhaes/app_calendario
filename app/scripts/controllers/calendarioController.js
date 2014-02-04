@@ -1,3 +1,4 @@
 'use strict';
-angular.module('appCalendarioApp').controller('MainCtrl', $function ($scope) {
-});
+angular.module('appCalendarioApp').controller('calendarioController', ['$scope', function ($scope) {
+    $scope.mes = "Janeiro";
+}]);
