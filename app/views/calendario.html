@@ -1,7 +1,31 @@
-<h1>Calendario ala Google</h1>
-<p class="lead">
-    Calendario Javascript
-    <div ng-controller="calendarioController">
-        <p>Qual mês? {{mes}}!</p>
+<div ng-controller="calendarioController">
+    <pre><h1><center>Calendário ala Google</center></h1></pre>
+    <pre>Data selecionada: <em>{{dt | date:'fullDate' }}</em></pre>
+    <div style="display:inline-block; min-height:290px;">
+      <d$iv class="well well-sm" ng-model="dt">
+          <datepicker min="minDate" show-weeks="showWeeks"></datepicker>
+
+          </br>
+        <ul id="sortable1" class="droptrue">
+          <li class="ui-state-default">Projeto FAB</li>
+          <li class="ui-state-default">Projeto Polo Central</li>
+          <li class="ui-state-default">Projeto Kroton</li>
+          <li class="ui-state-default">Projeto a</li>
+          <li class="ui-state-default">Projeto b</li>
+          <li class="ui-state-default">Projeto c</li>
+        </ul>
+         
+        <ul id="sortable2" class="dropfalse"> 1
+          <li class="ui-state-highlight">Projeto Tropico</li>
+        </ul>
+        <ul id="sortable2" class="dropfalse"> 2
+        </ul>
+        <ul id="sortable2" class="dropfalse"> 3
+
+        </ul>
+        <ul id="sortable2" class="dropfalse"> 4
+
+        </ul>        
+      </div>
     </div>
-</p>
+</div>

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('appCalendarioApp', ['ngCookies', 'ngResource', 'ngSanitize',  'ngRoute'])
+angular.module('appCalendarioApp', ['ngCookies', 'ngResource', 'ngSanitize',  'ngRoute', 'ui.bootstrap'])
 
 .config(function ($routeProvider) {
     $routeProvider
