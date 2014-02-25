@@ -50,9 +50,16 @@ var calendarioController = function ($scope) {
       dropOnEmpty: false
     });
  
-    $( "#sortable1, #sortable2, #sortable3" ).disableSelection();
+    $( "#sortable1, #sortable2, #sortable3, .diastyle" ).disableSelection();
     };
     
     $scope.dragdrop();
     
+    $scope.dias = [
+        {dia: 1},
+        {dia: 2},
+        {dia: 3},
+        {dia: 4},
+        {dia: 5}
+    ];
 };
