@@ -1,26 +1,60 @@
 <div ng-controller="calendarioController">
-    <pre><h1><center>Calendário ala Google</center></h1></pre>
+    <pre><h1><center>Dextra Calendario Horas</center></h1></pre>
     <pre>Data selecionada: <em>{{dt | date:'fullDate' }}</em></pre>
     <div style="display:inline-block; min-height:290px;">
       <d$iv class="well well-sm" ng-model="dt">
-          <datepicker min="minDate" show-weeks="showWeeks"></datepicker>
-
-          </br>
         <ul id="sortable1" class="droptrue projetos"> <strong>Projetos</strong>
-          <li class="ui-state-default">Projeto FAB</li>
-          <li class="ui-state-default">Projeto Polo Central</li>
-          <li class="ui-state-default">Projeto Kroton</li>
-          <li class="ui-state-default">Projeto a</li>
-          <li class="ui-state-default">Projeto b</li>
-          <li class="ui-state-default">Projeto c</li>
+            <li class="ui-state-default droptrue">
+              <div>Projeto FAB</div>
+            </li>
+            <li class="ui-state-default droptrue">
+                <div>Projeto Polo Central</div>
+            </li>
+            <li class="ui-state-default droptrue">
+                <div>Projeto Kroton</div>
+            </li>
+            <li class="ui-state-default droptrue">
+                <div>Projeto a</div>
+            </li>
+            <li class="ui-state-default droptrue">
+                <div>Projeto b</div>
+            </li>
+            <li class="ui-state-default droptrue">
+                <div>Projeto c</div>
+            </li>
         </ul>
-        
-        <ul id="sortable2" class="droptrue diastyle" ng-repeat="dia in dias">{{dia.dia}}
-        </ul>
-        
-        <ul id="sortable2" class="droptrue diastyle"> Arraste para cá!
-        </ul>
-        
+        <div>
+            <ul id="sortable2">
+                <li class="diastitulo">DOMINGO</li>
+                <li class="diastitulo">SEGUNDA</li>
+                <li class="diastitulo">TERÇA</li>
+                <li class="diastitulo">QUARTA</li>
+                <li class="diastitulo">QUINTA</li>
+            </ul>
+            <ul id="sortable2">
+    <!--<li id="dia{{dia.dia}}" class="diastyle droptrue" ng-repeat="dia in dias">{{dia.dia}}</li>-->
+                <li class="diastyle droptrue">1</li>
+                <li class="diastyle droptrue">2</li>
+                <li class="diastyle droptrue">3</li>
+                <li class="diastyle droptrue">4</li>
+                <li class="diastyle droptrue">5</li>
+                
+                <li class="diastyle droptrue">6</li>
+                <li class="diastyle droptrue">7</li>
+                <li class="diastyle droptrue">8</li>
+                <li class="diastyle droptrue">9</li>
+                <li class="diastyle droptrue">10</li>
+                <li class="diastyle droptrue">11</li>
+                <li class="diastyle droptrue">12</li>
+                <li class="diastyle droptrue">13</li>
+                <li class="diastyle droptrue">14</li>
+                <li class="diastyle droptrue">15</li>
+                <li class="diastyle droptrue">16</li>
+                <li class="diastyle droptrue">17</li>
+                <li class="diastyle droptrue">18</li>
+                
+            </ul>
+        </div>
       </div>
     </div>
 </div>

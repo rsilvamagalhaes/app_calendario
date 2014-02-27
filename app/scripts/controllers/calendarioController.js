@@ -40,26 +40,25 @@ var calendarioController = function ($scope) {
     $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'shortDate'];
     $scope.format = $scope.formats[0];
     
-    $scope.dragdrop = function() {
-        $( "ul.droptrue" ).sortable({
-      connectWith: "ul"
-    });
- 
-    $( "ul.dropfalse" ).sortable({
-      connectWith: "ul",
-      dropOnEmpty: false
-    });
- 
-    $( "#sortable1, #sortable2, #sortable3, .diastyle" ).disableSelection();
+    //Inicio calendario task
+    $scope.dias = function() {
+        for(var i = 1; i<=32; i++){ 
+            dias[i] = {dia: i};
+        }
+        return dias;
     };
-    
+
+    $scope.dragdrop = function() {
+        $( "li.droptrue" ).sortable({connectWith: "li"});
+ 
+        $( "li.dropfalse" ).sortable({
+          connectWith: "li",
+          dropOnEmpty: false
+        });
+ 
+        $( "#sortable1, #sortable2, #sortable3, .diastyle" ).disableSelection();
+    };        
     $scope.dragdrop();
-    
-    $scope.dias = [
-        {dia: 1},
-        {dia: 2},
-        {dia: 3},
-        {dia: 4},
-        {dia: 5}
-    ];
+//    angular.element(document).ready(function () {
+//    });
 };
