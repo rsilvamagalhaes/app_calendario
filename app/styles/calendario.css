@@ -23,19 +23,18 @@
     width: 100px;
     height: 100px;
     font-size: 12px;
-    font-family:Verdana;
+    font-family:Arial;
 }
 
-.diastitulo {
+.diatitulo {
     list-style-type: none; 
     margin: 0; 
     padding: 0; 
     float: left; 
-    margin: 1px;
     background: #373737; 
     border-color:#F6F6F6;
     padding: 5px; 
-    width: 100px;
+    width: 102px;
     height: 30px;
     font-size: 12px;
     font-family: Arial;
