@@ -6,7 +6,7 @@
     margin-right: 10px; 
     background: white; 
     padding: 5px; 
-    width: 143px;
+    width: 100px;
     height:650px;
     font-size: 11px;
 }
@@ -20,8 +20,8 @@
     background: #F5F5F5; 
     border-color:#F6F6F6;
     padding: 5px; 
-    width: 70px;
-    height: 70px;
+    width: 82px;
+    height: 82px;
     font-size: 12px;
     font-family:Arial;
 }
@@ -34,7 +34,7 @@
     background: #373737; 
     border-color:#F6F6F6;
     padding: 5px; 
-    width: 72px;
+    width: 84px;
     height: 30px;
     font-size: 12px;
     font-family: Arial;
@@ -49,4 +49,14 @@ li.diastyle div {
     border-color: #F5F5F5;
     border: 1px solid;
     height: 20px;
+}
+
+.mesStyle {
+    font-size: 12px;
+    font-family: Arial;
+}
+
+.anoStyle{
+    font-size: 12px;
+    font-family: Arial;
 }
