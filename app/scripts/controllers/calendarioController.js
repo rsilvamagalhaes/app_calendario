@@ -41,16 +41,16 @@ var calendarioController = function ($scope) {
     $scope.format = $scope.formats[0];
     
     //Inicio calendario task
-    $scope.dias = function() {
-        for(var i = 1; i<=32; i++){ 
-            dias[i] = {dia: i};
+    $scope.getDias = function() {
+        var dias = [];
+        for(var i = 1; i<=31; i++){ 
+            dias[i - 1] = {dia: i};
         }
         return dias;
     };
 
     $scope.dragdrop = function() {
         $( "li.droptrue" ).sortable({connectWith: "li"});
- 
         $( "li.dropfalse" ).sortable({
           connectWith: "li",
           dropOnEmpty: false
@@ -58,7 +58,10 @@ var calendarioController = function ($scope) {
  
         $( "#sortable1, #sortable2, #sortable3, .diastyle" ).disableSelection();
     };        
-    $scope.dragdrop();
-//    angular.element(document).ready(function () {
-//    });
+    
+    $scope.dias = $scope.getDias();
+    
+    setTimeout(function() {
+        $scope.dragdrop();
+    }, 10);
 };
