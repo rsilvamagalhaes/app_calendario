@@ -6,45 +6,40 @@
     margin-right: 10px;
     background: white;
     padding: 5px;
-    width: 100px;
+    width: 16%;
     height:650px;
     font-size: 11px;
 }
 
-.diastyle {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+.diastyle, .diatitulo {
+    list-style-type: none;    
     float: left;
-    margin: 1px;
-    background: #F5F5F5;
-    border-color:#F6F6F6;
-    padding: 5px;
-    width: 82px;
-    height: 82px;
+    width: 12%;
     font-size: 12px;
     font-family:Arial;
 }
 
+.diastyle {
+    margin: 1px;
+    background: #F5F5F5;
+    border-color:#F6F6F6;
+    height: 82px;
+    padding-left: 5px;
+}
+
 .diatitulo {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    float: left;
+    margin: 1px;
     background: #373737;
     border-color:#F6F6F6;
-    padding: 5px;
-    width: 84px;
     height: 30px;
-    font-size: 12px;
-    font-family: Arial;
     color: #F2F2F2;
+    text-align: center;
+    vertical-align: center;
 }
 
 li.diastyle div {
     font-size: 9px;
     background: #7187AD;
-    font-family:Arial;
     color:white;
     border-color: #F5F5F5;
     border: 1px solid;
@@ -52,11 +47,16 @@ li.diastyle div {
 }
 
 .mesStyle {
-    font-size: 12px;
-    font-family: Arial;
+    display: inline;
 }
 
 .anoStyle{
+    display: inline;
+}
+
+.topocalendario {
+    background-color: black;
     font-size: 12px;
     font-family: Arial;
+    color: white;
 }
