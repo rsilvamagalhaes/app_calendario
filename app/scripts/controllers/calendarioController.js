@@ -1,5 +1,11 @@
 'use strict';
-angular.module('appCalendarioApp');
+angular.module('appCalendarioApp')
+    .directive('dragDropDiretiva', function() {
+        return function(scope, element) {
+            scope.dragdrop();
+        };
+});
+
 var calendarioController = function ($scope) {
     $scope.today = function() {
         $scope.dt = new Date();
@@ -56,12 +62,12 @@ var calendarioController = function ($scope) {
           dropOnEmpty: false
         });
  
-        $( "#sortable1, #sortable2, #sortable3, .diastyle" ).disableSelection();
-    };        
+        $("#sortable1, #sortable2, #sortable3, .diastyle").disableSelection();
+    };
     
     $scope.dias = $scope.getDias();
-    
-    setTimeout(function() {
-        $scope.dragdrop();
-    }, 10);
+//    
+//    setTimeout(function() {
+//
+//    }, 10);
 };

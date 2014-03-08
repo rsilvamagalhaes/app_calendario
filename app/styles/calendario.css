@@ -12,8 +12,8 @@
 }
 
 .diastyle {
-    list-style-type: none; 
-    margin: 0; 
+    list-style-type: none;
+    margin: 0;
     padding: 0; 
     float: left; 
     margin: 1px;
@@ -26,11 +26,18 @@
     font-family:Arial;
 }
 
+.barramesano {
+    background-color: #373737; 
+    border-color:#F6F6F6;
+    padding: 5px; 
+    width: 84px;
+    height: 30px;
+    font-size: 12px;
+    font-family: Arial;
+    color: #F2F2F2;
+}
+
 .diatitulo {
-    list-style-type: none; 
-    margin: 0; 
-    padding: 0; 
-    float: left; 
     background: #373737; 
     border-color:#F6F6F6;
     padding: 5px; 
@@ -39,6 +46,10 @@
     font-size: 12px;
     font-family: Arial;
     color: #F2F2F2;
+    list-style-type: none;
+    margin: 0; 
+    padding: 0; 
+    float: left; 
 }
 
 li.diastyle div {
@@ -54,9 +65,11 @@ li.diastyle div {
 .mesStyle {
     font-size: 12px;
     font-family: Arial;
+    float:left;
 }
 
-.anoStyle{
+.anoStyle {
     font-size: 12px;
     font-family: Arial;
+    float: right;
 }

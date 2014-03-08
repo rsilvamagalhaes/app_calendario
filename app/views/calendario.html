@@ -5,6 +5,9 @@
       <div ng-model="dt">
         <ul id="sortable1" class="droptrue projetos"> <strong>Projetos</strong>
             <li class="ui-state-default droptrue">
+              <div>Faculdade</div>
+            </li>            
+            <li class="ui-state-default droptrue">
               <div>Projeto FAB</div>
             </li>
             <li class="ui-state-default droptrue">
@@ -24,9 +27,12 @@
             </li>
         </ul>
         <div>
-            <p class="mesStyle">< Janeiro ></p>
-            <p class="anoStyle">2014</p>
-        </div>
+        <button type="button" class="btn btn-default btn-sm pull-left"><</button>
+        <div>
+            <div class="mesStyle">Janeiro</div>
+            <div class="anoStyle">2014</div>
+        </div>            
+        <button type="button" class="btn btn-default btn-sm pull-right">></button>
         <div>
             <ul id="sortable2">
                 <li class="diatitulo">Domingo</li>
@@ -38,8 +44,9 @@
                 <li class="diatitulo">Sabado</li>
             </ul>
             <ul id="sortable2">
-                <li id="dia{{dia.dia}}" class="diastyle droptrue" ng-repeat="dia in dias">{{dia.dia}}</li>
+                <li id="dia{{dia.dia}}" class="diastyle droptrue" ng-repeat="dia in dias" drag-drop-diretiva>{{dia.dia}}</li>
             </ul>
+        </div>
         </div>
       </div>
     </div>
