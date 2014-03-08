@@ -66,8 +66,4 @@ var calendarioController = function ($scope) {
     };
     
     $scope.dias = $scope.getDias();
-//    
-//    setTimeout(function() {
-//
-//    }, 10);
 };

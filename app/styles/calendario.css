@@ -1,11 +1,11 @@
-.projetos { 
+.projetos {
     list-style-type: none;
-    margin: 0; 
-    padding: 0; 
-    float: left; 
-    margin-right: 10px; 
-    background: white; 
-    padding: 5px; 
+    margin: 0;
+    padding: 0;
+    float: left;
+    margin-right: 10px;
+    background: white;
+    padding: 5px;
     width: 100px;
     height:650px;
     font-size: 11px;
@@ -14,47 +14,36 @@
 .diastyle {
     list-style-type: none;
     margin: 0;
-    padding: 0; 
-    float: left; 
+    padding: 0;
+    float: left;
     margin: 1px;
-    background: #F5F5F5; 
+    background: #F5F5F5;
     border-color:#F6F6F6;
-    padding: 5px; 
+    padding: 5px;
     width: 82px;
     height: 82px;
     font-size: 12px;
     font-family:Arial;
 }
 
-.barramesano {
-    background-color: #373737; 
-    border-color:#F6F6F6;
-    padding: 5px; 
-    width: 84px;
-    height: 30px;
-    font-size: 12px;
-    font-family: Arial;
-    color: #F2F2F2;
-}
-
 .diatitulo {
-    background: #373737; 
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    float: left;
+    background: #373737;
     border-color:#F6F6F6;
-    padding: 5px; 
+    padding: 5px;
     width: 84px;
     height: 30px;
     font-size: 12px;
     font-family: Arial;
     color: #F2F2F2;
-    list-style-type: none;
-    margin: 0; 
-    padding: 0; 
-    float: left; 
 }
 
 li.diastyle div {
     font-size: 9px;
-    background: #7187AD; 
+    background: #7187AD;
     font-family:Arial;
     color:white;
     border-color: #F5F5F5;
@@ -65,11 +54,9 @@ li.diastyle div {
 .mesStyle {
     font-size: 12px;
     font-family: Arial;
-    float:left;
 }
 
-.anoStyle {
+.anoStyle{
     font-size: 12px;
     font-family: Arial;
-    float: right;
 }
