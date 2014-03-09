@@ -23,19 +23,20 @@
                 <div>Projeto c</div>
             </li>
         </ul>
-        <div class="topocalendario">
-            <div class="mesStyle">
-                <button class="default"><</button>
-                <p>Janeiro</p>
-                <button class="default">></button>
-            </div>
-            <div class="anoStyle">
-                <button class="default"><</button>
-                <p>2014</p>
-                <button class="default">></button>
-            </div>
-        </div>
         <div>
+            <div class="topocalendario">
+                <div>
+                    <button class="topocalendarioleft"><</button>
+                    <p class="topocalendarioleft">{{nomeMes}}</p>
+                    <input id="mes" value="{{numMes}}" type="hidden"/>
+                    <button class="topocalendarioleft">></button>
+                </div>
+                <div>
+                    <button class="topocalendarioright"><</button>
+                    <p id="ano" class="topocalendarioright">{{ano}}</p>
+                    <button class="topocalendarioright">></button>
+                </div>
+            </div>            
             <ul id="sortable2">
                 <li class="diatitulo">Domingo</li>
                 <li class="diatitulo">Segunda</li>
@@ -46,7 +47,8 @@
                 <li class="diatitulo">Sabado</li>
             </ul>
             <ul id="sortable2">
-                <li id="dia{{dia.dia}}" class="diastyle droptrue" ng-repeat="dia in dias" drag-drop-diretiva>{{dia.dia}}</li>
+                <li id="dia{{dia.dia}}" class="diastyle droptrue" 
+                    ng-repeat="dia in getDias(2014, 3)" drag-drop-diretiva>{{dia.dia}}</li>
             </ul>
         </div>
       </div>

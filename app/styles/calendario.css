@@ -46,17 +46,21 @@ li.diastyle div {
     height: 20px;
 }
 
-.mesStyle {
-    display: inline;
-}
-
-.anoStyle{
-    display: inline;
-}
-
-.topocalendario {
+.topocalendario, topocalendarioleft, topocalendarioright {
     background-color: black;
     font-size: 12px;
     font-family: Arial;
     color: white;
+    height: 30px;
+    vertical-align: center;
+}
+
+.topocalendarioleft {
+    float: left;
+    display: inline;
+}
+
+.topocalendarioright {
+    float: right;
+    display: inline;
 }

@@ -47,9 +47,36 @@ var calendarioController = function ($scope) {
     $scope.format = $scope.formats[0];
     
     //Inicio calendario task
-    $scope.getDias = function() {
+    $scope.mes = [{mesNome: "Janeiro", num: 1},
+    {mesNome: "Fevereiro", num: 2},
+    {mesNome: "Março", num: 3},
+    {mesNome: "Abril", num: 4},
+    {mesNome: "Maio", num: 5},
+    {mesNome: "Junho", num: 6},
+    {mesNome: "Julho", num: 7},
+    {mesNome: "Agosto", num: 8},
+    {mesNome: "Setembro", num: 9},
+    {mesNome: "Outubro", num: 10},
+    {mesNome: "Novembro", num: 11},
+    {mesNome: "Dezembro", num: 12}];
+    
+    var getNomeMes = function(mes) {
+        for(var pos = 0; pos <= $scope.mes.length; pos++) {
+            if (mes === $scope.mes[pos].num) {
+                return $scope.mes[pos].mesNome;
+            }
+        }
+    };
+    
+    var diaAtual = new Date();
+    $scope.numMes = diaAtual.getMonth() + 1;
+    $scope.nomeMes = getNomeMes($scope.numMes);
+    $scope.ano = diaAtual.getFullYear();
+    
+    $scope.getDias = function(mes, ano) {
+        var qtdDias = new Date(ano, mes, 0).getDate();
         var dias = [];
-        for(var i = 1; i<=31; i++){ 
+        for(var i = 1; i<=qtdDias; i++){ 
             dias[i - 1] = {dia: i};
         }
         return dias;
@@ -64,6 +91,5 @@ var calendarioController = function ($scope) {
  
         $("#sortable1, #sortable2, #sortable3, .diastyle").disableSelection();
     };
-    
-    $scope.dias = $scope.getDias();
+//    $scope.dias = $scope.getDias(mes, ano);
 };
