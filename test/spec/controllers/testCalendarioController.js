@@ -17,6 +17,10 @@ describe('Controller: calendarioController', function () {
   }));
 
   it('Test total de mes', function () {
-    expect(scope.mes.length).toBe(12);
+    expect(12).toBe(scope.mes.length);
+  });
+    
+  it('Test pega quantidade de dias do mes de janeiro 2014', function () {
+    expect(31).toBe(scope.getDias(1, 2014).length);
   });
 });
