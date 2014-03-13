@@ -16,7 +16,7 @@ describe('Controller: calendarioController', function () {
     });
   }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
+  it('Test total de mes', function () {
     expect(scope.mes.length).toBe(12);
   });
 });
