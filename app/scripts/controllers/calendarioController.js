@@ -60,6 +60,8 @@ var calendarioController = function ($scope) {
     {mesNome: "Novembro", num: 11},
     {mesNome: "Dezembro", num: 12}];
     
+    $scope.diasSemana = ["Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sabado"];
+
     var getNomeMes = function(mes) {
         for(var pos = 0; pos <= $scope.mes.length; pos++) {
             if (mes === $scope.mes[pos].num) {
@@ -74,7 +76,7 @@ var calendarioController = function ($scope) {
     $scope.ano = diaAtual.getFullYear();
     
     $scope.getDias = function(mes, ano) {
-        var qtdDias = new Date(ano, mes, 0).getDate();
+        var qtdDias = new Date(ano, mes, 1).getDate();
         var dias = [];
         for(var i = 1; i<=qtdDias; i++){ 
             dias[i - 1] = {dia: i};
@@ -82,6 +84,55 @@ var calendarioController = function ($scope) {
         return dias;
     };
 
+    $scope.getDiaSemana = function(indexSemana) {
+        return $scope.diasSemana[indexSemana];
+    };
+    
+    $scope.getDiasMesPassado = function(mesAtual, ano) {
+        if (mesAtual === 1) { 
+            mesAtual = 12;
+        } else {
+            mesAtual--;
+        }
+        
+        var data = new Date(ano, mesAtual, 0);
+        var ultimoDia = data.getDate();
+        var indexSemana = data.getDay();
+        var dias = [];
+        if (indexSemana > 0) {
+            var diaStop = ultimoDia - (indexSemana + 1);
+            var cont = 0;
+            for(var dia = ultimoDia; dia >= diaStop; dia--) {
+                dias[cont] = {dia: dia};
+                cont++;
+            }
+        }
+        return dias.reverse();
+    };
+    
+    $scope.getDiasMesProximo = function(mesAtual, ano) {
+        var proximoMes;
+        if (mesAtual === 12) { 
+            proximoMes = 1;
+        } else {
+            proximoMes = mesAtual++;
+        }
+        var data = new Date(ano, proximoMes, 1);
+        var primeiroDia = data.getDate();
+        var dias = [];
+        var indexSemana = data.getDay();
+        var cont = 0;
+        AJUSTAR AQUI ESSE PONTO, DEVETER MERDA
+        if (indexSemana > 0) {
+            for(var dia = indexSemana; dia <= 7; dia++) {
+                dias[cont] = {dia: dia};
+                cont++;
+            }
+        }
+        
+        return dias;
+    };
+    
     $scope.dragdrop = function() {
         $( "li.droptrue" ).sortable({connectWith: "li"});
         $( "li.dropfalse" ).sortable({
@@ -89,7 +140,7 @@ var calendarioController = function ($scope) {
           dropOnEmpty: false
         });
  
-        $("#sortable1, #sortable2, #sortable3, .diastyle").disableSelection();
+        $("#sortable1, #sortable2, #sortable3, .style").disableSelection();
     };
 //    $scope.dias = $scope.getDias(mes, ano);
 };
