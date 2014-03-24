@@ -44,8 +44,7 @@ describe('Controller: calendarioController', function () {
     
   it('Test pega dias do proximo mes', function () {
     var diasProximoMes = scope.getDiasMesProximo(3, 2014)
-    expect(7).toBe(diasProximoMes.length);
-    console.log(diasProximoMes);
+    expect(5).toBe(diasProximoMes.length);
     expect(1).toBe(diasProximoMes[0].dia);
     expect(2).toBe(diasProximoMes[1].dia);
     expect(3).toBe(diasProximoMes[2].dia);

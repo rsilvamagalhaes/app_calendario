@@ -76,7 +76,7 @@ var calendarioController = function ($scope) {
     $scope.ano = diaAtual.getFullYear();
     
     $scope.getDias = function(mes, ano) {
-        var qtdDias = new Date(ano, mes, 1).getDate();
+        var qtdDias = new Date(ano, mes, 0).getDate();
         var dias = [];
         for(var i = 1; i<=qtdDias; i++){ 
             dias[i - 1] = {dia: i};
@@ -120,16 +120,14 @@ var calendarioController = function ($scope) {
         var data = new Date(ano, proximoMes, 1);
         var primeiroDia = data.getDate();
         var dias = [];
-        var indexSemana = data.getDay();
-        var cont = 0;
-        AJUSTAR AQUI ESSE PONTO, DEVETER MERDA
+        var indexSemana = (data.getDay() + 1);
         if (indexSemana > 0) {
-            for(var dia = indexSemana; dia <= 7; dia++) {
-                dias[cont] = {dia: dia};
-                cont++;
+            var dia = 1;
+            for(var index = indexSemana; index <= 7; index++) {
+                dias[dia - 1] = {dia: dia};
+                dia++;
             }
         }
-        
         return dias;
     };
     
