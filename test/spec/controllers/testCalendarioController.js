@@ -21,7 +21,7 @@ describe('Controller: calendarioController', function () {
   });
     
   it('Test pega quantidade de dias do mes de janeiro 2014', function () {
-    expect(31).toBe(scope.getDias(1, 2014).length);
+    expect(34).toBe(scope.getDias(1, 2014).length);
   });
 
   it('Test pega dia da semana', function () {
@@ -29,17 +29,26 @@ describe('Controller: calendarioController', function () {
     expect("Quarta").toBe(scope.getDiaSemana(3));
     expect("Sexta").toBe(scope.getDiaSemana(5));
   });    
+
+  it('Test pega dias do mes passado Jan', function () {
+    var diasMesPassado = scope.getDiasMesPassado(1, 2014);
+    console.log("Dias mes passada - " + diasMesPassado[0].dia);
+    expect(3).toBe(diasMesPassado.length);
+    expect(29).toBe(diasMesPassado[0].dia);
+    expect(30).toBe(diasMesPassado[1].dia);
+    expect(31).toBe(diasMesPassado[2].dia);
+  }); 
     
-  it('Test pega dias do mes passado', function () {
+  it('Test pega dias do mes passado fev', function () {
     var diasMesPassado = scope.getDiasMesPassado(2, 2014);
-    expect(7).toBe(diasMesPassado.length);
-    expect(25).toBe(diasMesPassado[0].dia);  
-    expect(26).toBe(diasMesPassado[1].dia);
-    expect(27).toBe(diasMesPassado[2].dia);
-    expect(28).toBe(diasMesPassado[3].dia);
-    expect(29).toBe(diasMesPassado[4].dia);
-    expect(30).toBe(diasMesPassado[5].dia);
-    expect(31).toBe(diasMesPassado[6].dia);
+    expect(6).toBe(diasMesPassado.length);
+    
+    expect(26).toBe(diasMesPassado[0].dia);
+    expect(27).toBe(diasMesPassado[1].dia);
+    expect(28).toBe(diasMesPassado[2].dia);
+    expect(29).toBe(diasMesPassado[3].dia);
+    expect(30).toBe(diasMesPassado[4].dia);
+    expect(31).toBe(diasMesPassado[5].dia);
   });    
     
   it('Test pega dias do proximo mes', function () {
