@@ -21,7 +21,10 @@ describe('Controller: calendarioController', function () {
   });
     
   it('Test pega quantidade de dias do mes de janeiro 2014', function () {
-    expect(34).toBe(scope.getDias(1, 2014).length);
+    var dias = scope.getDias(1, 2014);
+    expect(35).toBe(dias.length);
+    expect(29).toBe(dias[0].dia);
+    expect(1).toBe(dias[dias.length-1].dia);
   });
 
   it('Test pega dia da semana', function () {
@@ -32,7 +35,6 @@ describe('Controller: calendarioController', function () {
 
   it('Test pega dias do mes passado Jan', function () {
     var diasMesPassado = scope.getDiasMesPassado(1, 2014);
-    console.log("Dias mes passada - " + diasMesPassado[0].dia);
     expect(3).toBe(diasMesPassado.length);
     expect(29).toBe(diasMesPassado[0].dia);
     expect(30).toBe(diasMesPassado[1].dia);

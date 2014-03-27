@@ -74,19 +74,20 @@ var calendarioController = function ($scope) {
     $scope.numMes = diaAtual.getMonth() + 1;
     $scope.nomeMes = getNomeMes($scope.numMes);
     $scope.ano = diaAtual.getFullYear();
-    
-    NAÕA ESTA FUNCIONANDO OS DIAS DO MES ATUAL COM OS DIAS DO MES PASSADO, DEPOIS VER 
-    OS DIAS DO MES PROXIMO
+
     $scope.getDias = function(mes, ano) {
         var diasMesPassado = this.getDiasMesPassado(mes, ano);
         var qtdDias = new Date(ano, mes, 0).getDate();
         var dias = [];
         dias = diasMesPassado;
-        var index = 1 + diasMesPassado.length;
-        for(var i = index; i<=qtdDias; i++){ 
-            dias[i] = {dia: i};
+        var i;
+        for(i = 1; i<=qtdDias; i++){ 
+            dias.push({dia: i});
         }
-        //var diasMesProximo = this.getDiasMesProximo(mes, ano);
+        var diasMesProximo = this.getDiasMesProximo(mes, ano);
+        for(i = 0; i<=diasMesProximo.length-1; i++) {
+            dias.push({dia: diasMesProximo[i].dia});
+        }
         
         return dias;
     };
@@ -109,11 +110,9 @@ var calendarioController = function ($scope) {
         var dias = [];
     
         if (indexSemana > 0) {
-            console.log("ultimo dia + idnex seama n " + ultimoDia + " " + indexSemana );
             var diaStop = ultimoDia - indexSemana;
             var cont = 0;
             for(var dia = ultimoDia; dia >= diaStop; dia--) {
-                console.log("DIAS --< " + dia);
                 dias[cont] = {dia: dia};
                 cont++;
             }
