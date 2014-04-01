@@ -51,6 +51,12 @@ describe('Controller: calendarioController', function () {
     expect(29).toBe(diasMesPassado[3].dia);
     expect(30).toBe(diasMesPassado[4].dia);
     expect(31).toBe(diasMesPassado[5].dia);
+  });
+
+  it('Test pega dias do mes passado DEZ', function () {
+    var diasMesPassado = scope.getDiasMesPassado(12, 2014);
+    expect(1).toBe(diasMesPassado.length);
+    expect(30).toBe(diasMesPassado[0].dia);
   });    
     
   it('Test pega dias do proximo mes', function () {
@@ -61,5 +67,13 @@ describe('Controller: calendarioController', function () {
     expect(3).toBe(diasProximoMes[2].dia);
     expect(4).toBe(diasProximoMes[3].dia);
     expect(5).toBe(diasProximoMes[4].dia);
-  }); 
+  });
+    
+  it('Test pega dias do proximo mes Dez 2014', function () {
+    var diasProximoMes = scope.getDiasMesProximo(12, 2014)
+    expect(3).toBe(diasProximoMes.length);
+    expect(1).toBe(diasProximoMes[0].dia);
+    expect(2).toBe(diasProximoMes[1].dia);
+    expect(3).toBe(diasProximoMes[2].dia);
+  });
 });

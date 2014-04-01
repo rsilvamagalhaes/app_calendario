@@ -71,7 +71,8 @@ var calendarioController = function ($scope) {
     };
     
     var diaAtual = new Date();
-    $scope.numMes = diaAtual.getMonth() + 1;
+    //$scope.numMes = diaAtual.getMonth() + 1;
+    $scope.numMes = 12;
     $scope.nomeMes = getNomeMes($scope.numMes);
     $scope.ano = diaAtual.getFullYear();
 
@@ -97,7 +98,7 @@ var calendarioController = function ($scope) {
     };
     
     $scope.getDiasMesPassado = function(mesAtual, ano) {
-        if (mesAtual === 1) { 
+        if (mesAtual === 1) {
             mesAtual = 12;
             ano = ano - 1;
         } else {
@@ -108,14 +109,12 @@ var calendarioController = function ($scope) {
         var ultimoDia = data.getDate();
         var indexSemana = data.getDay();
         var dias = [];
-    
-        if (indexSemana > 0) {
-            var diaStop = ultimoDia - indexSemana;
-            var cont = 0;
-            for(var dia = ultimoDia; dia >= diaStop; dia--) {
-                dias[cont] = {dia: dia};
-                cont++;
-            }
+
+        var diaStop = ultimoDia - indexSemana;
+        var cont = 0;
+        for(var dia = ultimoDia; dia >= diaStop; dia--) {
+            dias[cont] = {dia: dia};
+            cont++;
         }
         return dias.reverse();
     };
@@ -123,7 +122,8 @@ var calendarioController = function ($scope) {
     $scope.getDiasMesProximo = function(mesAtual, ano) {
         var proximoMes;
         if (mesAtual === 12) { 
-            proximoMes = 1;
+            proximoMes = 0;
+            ano++;
         } else {
             proximoMes = mesAtual++;
         }
