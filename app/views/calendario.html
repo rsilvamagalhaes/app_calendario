@@ -26,10 +26,10 @@
         <div>
             <div class="topocalendario">
                 <div>
-                    <button class="topocalendarioleft"><</button>
+                    <button class="topocalendarioleft" ng-click="irMesPassado()"><</button>
                     <p class="topocalendarioleft">{{nomeMes}}</p>
                     <input id="mes" value="{{numMes}}" type="hidden"/>
-                    <button class="topocalendarioleft">></button>
+                    <button class="topocalendarioleft" ng-click="irMesProximo()">></button>
                 </div>
                 <div>
                     <button class="topocalendarioright"><</button>
@@ -48,7 +48,7 @@
             </ul>
             <ul id="sortable2">
                 <li id="dia{{dia.dia}}" class="diastyle droptrue" 
-                    ng-repeat="dia in getDias(numMes, ano)" drag-drop-diretiva>{{dia.dia}}</li>
+                    ng-repeat="dia in dias" drag-drop-diretiva>{{dia.dia}}</li>
             </ul>
         </div>
       </div>

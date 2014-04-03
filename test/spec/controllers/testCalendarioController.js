@@ -76,4 +76,32 @@ describe('Controller: calendarioController', function () {
     expect(2).toBe(diasProximoMes[1].dia);
     expect(3).toBe(diasProximoMes[2].dia);
   });
+    
+  it('Test ir para mes 2'), function () {
+      scope.numMes = 1;
+      scope.irMesProximo();
+      expect(2).toBe(scope.numMes);
+  };
+
+  it('Test ir do mes 12 para o mes 1'), function () {
+      scope.numMes = 12;
+      scope.ano = 2013;
+      scope.irMesProximo();
+      expect(1).toBe(scope.numMes);
+      expect(2014).toBe(scope.ano);
+  };
+  
+  it('Test ir para mes 1'), function () {
+      scope.numMes = 2;
+      scope.irMesPassado();
+      expect(1).toBe(scope.numMes);
+  };
+
+  it('Test ir do mes 1 para o mes 12'), function () {
+      scope.numMes = 1;
+      scope.ano = 2013;
+      scope.irMesProximo();
+      expect(12).toBe(scope.numMes);
+      expect(2012).toBe(scope.ano);
+  }
 });

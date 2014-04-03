@@ -71,31 +71,31 @@ var calendarioController = function ($scope) {
     };
     
     var diaAtual = new Date();
-    //$scope.numMes = diaAtual.getMonth() + 1;
-    $scope.numMes = 12;
+    $scope.numMes = diaAtual.getMonth() + 1;
     $scope.nomeMes = getNomeMes($scope.numMes);
     $scope.ano = diaAtual.getFullYear();
-
-    $scope.getDias = function(mes, ano) {
-        var diasMesPassado = this.getDiasMesPassado(mes, ano);
-        var qtdDias = new Date(ano, mes, 0).getDate();
+    
+    $scope.getDiasMesProximo = function(mesAtual, ano) {
+        var proximoMes;
+        if (mesAtual === 12) { 
+            proximoMes = 0;
+            ano++;
+        } else {
+            proximoMes = mesAtual++;
+        }
+        var data = new Date(ano, proximoMes, 1);
+        var primeiroDia = data.getDate();
         var dias = [];
-        dias = diasMesPassado;
-        var i;
-        for(i = 1; i<=qtdDias; i++){ 
-            dias.push({dia: i});
+        var indexSemana = (data.getDay() + 1);
+        if (indexSemana > 0) {
+            var dia = 1;
+            for(var index = indexSemana; index <= 7; index++) {
+                dias[dia - 1] = {dia: dia};
+                dia++;
+            }
         }
-        var diasMesProximo = this.getDiasMesProximo(mes, ano);
-        for(i = 0; i<=diasMesProximo.length-1; i++) {
-            dias.push({dia: diasMesProximo[i].dia});
-        }
-        
         return dias;
-    };
-
-    $scope.getDiaSemana = function(indexSemana) {
-        return $scope.diasSemana[indexSemana];
-    };
+    };    
     
     $scope.getDiasMesPassado = function(mesAtual, ano) {
         if (mesAtual === 1) {
@@ -119,26 +119,48 @@ var calendarioController = function ($scope) {
         return dias.reverse();
     };
     
-    $scope.getDiasMesProximo = function(mesAtual, ano) {
-        var proximoMes;
-        if (mesAtual === 12) { 
-            proximoMes = 0;
-            ano++;
-        } else {
-            proximoMes = mesAtual++;
-        }
-        var data = new Date(ano, proximoMes, 1);
-        var primeiroDia = data.getDate();
+    $scope.getDias = function(mes, ano) {
+        var diasMesPassado = this.getDiasMesPassado(mes, ano);
+        var qtdDias = new Date(ano, mes, 0).getDate();
         var dias = [];
-        var indexSemana = (data.getDay() + 1);
-        if (indexSemana > 0) {
-            var dia = 1;
-            for(var index = indexSemana; index <= 7; index++) {
-                dias[dia - 1] = {dia: dia};
-                dia++;
-            }
+        dias = diasMesPassado;
+        var i;
+        for(i = 1; i<=qtdDias; i++){ 
+            dias.push({dia: i});
         }
+        var diasMesProximo = this.getDiasMesProximo(mes, ano);
+        for(i = 0; i<=diasMesProximo.length-1; i++) {
+            dias.push({dia: diasMesProximo[i].dia});
+        }
+        
         return dias;
+    };
+
+    $scope.dias = $scope.getDias($scope.numMes, $scope.ano);
+    
+    $scope.irMesProximo = function() {
+        if ($scope.numMes === 12) {
+            $scope.numMes = 1;
+            $scope.ano++;
+            console.log("chamouuu !!! " + $scope.numMes);
+        } else {
+            $scope.numMes++;
+            console.log("chamouuu !!! " + $scope.numMes);
+        }
+    };
+    
+    $scope.irMesPassado = function() {
+        if ($scope.numMes === 1) {
+            $scope.numMes = 12;
+            $scope.ano--;
+        } else {
+            $scope.numMes++;
+            console.log("chamouuu !!! " + $scope.numMes);
+        }
+    };
+    
+    $scope.getDiaSemana = function(indexSemana) {
+        return $scope.diasSemana[indexSemana];
     };
     
     $scope.dragdrop = function() {
