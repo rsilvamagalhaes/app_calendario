@@ -147,16 +147,22 @@ var calendarioController = function ($scope) {
             $scope.numMes++;
             console.log("chamouuu !!! " + $scope.numMes);
         }
+        $scope.nomeMes = getNomeMes($scope.numMes);
+        $scope.dias = $scope.getDias($scope.numMes, $scope.ano);
     };
     
     $scope.irMesPassado = function() {
         if ($scope.numMes === 1) {
             $scope.numMes = 12;
             $scope.ano--;
+            $scope.nomeMes = getNomeMes($scope.numMes);
         } else {
             $scope.numMes++;
+            $scope.nomeMes = getNomeMes($scope.numMes);
             console.log("chamouuu !!! " + $scope.numMes);
         }
+        $scope.nomeMes = getNomeMes($scope.numMes);
+        $scope.dias = $scope.getDias($scope.numMes, $scope.ano);
     };
     
     $scope.getDiaSemana = function(indexSemana) {
