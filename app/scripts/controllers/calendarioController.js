@@ -137,15 +137,25 @@ var calendarioController = function ($scope) {
     };
 
     $scope.dias = $scope.getDias($scope.numMes, $scope.ano);
+  
+    $scope.irAnoProximo = function() {
+        $scope.ano++;
+        $scope.nomeMes = getNomeMes($scope.numMes);
+        $scope.dias = $scope.getDias($scope.numMes, $scope.ano);
+    };
+    
+    $scope.irAnoPassado = function() {
+        $scope.ano--;
+        $scope.nomeMes = getNomeMes($scope.numMes);
+        $scope.dias = $scope.getDias($scope.numMes, $scope.ano);
+    };
     
     $scope.irMesProximo = function() {
         if ($scope.numMes === 12) {
             $scope.numMes = 1;
             $scope.ano++;
-            console.log("chamouuu !!! " + $scope.numMes);
         } else {
             $scope.numMes++;
-            console.log("chamouuu !!! " + $scope.numMes);
         }
         $scope.nomeMes = getNomeMes($scope.numMes);
         $scope.dias = $scope.getDias($scope.numMes, $scope.ano);
@@ -159,7 +169,6 @@ var calendarioController = function ($scope) {
         } else {
             $scope.numMes++;
             $scope.nomeMes = getNomeMes($scope.numMes);
-            console.log("chamouuu !!! " + $scope.numMes);
         }
         $scope.nomeMes = getNomeMes($scope.numMes);
         $scope.dias = $scope.getDias($scope.numMes, $scope.ano);
@@ -178,5 +187,4 @@ var calendarioController = function ($scope) {
  
         $("#sortable1, #sortable2, #sortable3, .style").disableSelection();
     };
-//    $scope.dias = $scope.getDias(mes, ano);
 };

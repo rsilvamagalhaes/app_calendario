@@ -103,5 +103,17 @@ describe('Controller: calendarioController', function () {
       scope.irMesProximo();
       expect(12).toBe(scope.numMes);
       expect(2012).toBe(scope.ano);
-  }
+  };
+    
+  it('Test ir para proximo ano'), function () {
+      scope.ano = 2011;
+      scope.irAnoProximo();
+      expect(2012).toBe(scope.ano);
+  };
+
+  it('Test ir para passado ano'), function () {
+      scope.ano = 2011;
+      scope.irAnoPassado();
+      expect(2010).toBe(scope.ano);
+  };
 });
