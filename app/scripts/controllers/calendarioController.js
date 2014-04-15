@@ -87,10 +87,10 @@ var calendarioController = function ($scope) {
         var primeiroDia = data.getDate();
         var dias = [];
         var indexSemana = (data.getDay() + 1);
-        if (indexSemana > 0) {
+        if (indexSemana > 1) {
             var dia = 1;
             for(var index = indexSemana; index <= 7; index++) {
-                dias[dia - 1] = {dia: dia};
+                dias[dia - 1] = {dia: dia, style: "mesnaocorrente"};
                 dia++;
             }
         }
@@ -112,8 +112,9 @@ var calendarioController = function ($scope) {
 
         var diaStop = ultimoDia - indexSemana;
         var cont = 0;
+        
         for(var dia = ultimoDia; dia >= diaStop; dia--) {
-            dias[cont] = {dia: dia};
+            dias[cont] = {dia: dia, style: "mesnaocorrente"};
             cont++;
         }
         return dias.reverse();
@@ -130,7 +131,7 @@ var calendarioController = function ($scope) {
         }
         var diasMesProximo = this.getDiasMesProximo(mes, ano);
         for(i = 0; i<=diasMesProximo.length-1; i++) {
-            dias.push({dia: diasMesProximo[i].dia});
+            dias.push({dia: diasMesProximo[i].dia, style: diasMesPassado[i].style});
         }
         
         return dias;

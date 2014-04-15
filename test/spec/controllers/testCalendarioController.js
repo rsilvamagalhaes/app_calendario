@@ -19,6 +19,25 @@ describe('Controller: calendarioController', function () {
   it('Test total de mes', function () {
     expect(12).toBe(scope.mes.length);
   });
+
+  it("Test pega dias proximo mes de Janeiro 2014", function() {
+      var dias = scope.getDiasMesProximo(1, 2014);
+      expect(1).toBe(dias.length);
+      expect(1).toBe(dias[0].dia);
+  });
+
+  it("Test pega dias proximo mes de Abril 2014", function() {
+      var dias = scope.getDiasMesProximo(4, 2014);
+      expect(3).toBe(dias.length);
+      
+      expect(1).toBe(dias[0].dia);
+      expect(2).toBe(dias[1].dia);
+      expect(3).toBe(dias[2].dia);
+      
+      expect("mesnaocorrente").toBe(dias[0].style);
+      expect("mesnaocorrente").toBe(dias[1].style);
+      expect("mesnaocorrente").toBe(dias[2].style);
+  });    
     
   it('Test pega quantidade de dias do mes de janeiro 2014', function () {
     var dias = scope.getDias(1, 2014);
@@ -57,17 +76,31 @@ describe('Controller: calendarioController', function () {
     var diasMesPassado = scope.getDiasMesPassado(12, 2014);
     expect(1).toBe(diasMesPassado.length);
     expect(30).toBe(diasMesPassado[0].dia);
+    
+    expect("mesnaocorrente").toBe(diasMesPassado[0].style);
   });    
     
   it('Test pega dias do proximo mes', function () {
     var diasProximoMes = scope.getDiasMesProximo(3, 2014)
     expect(5).toBe(diasProximoMes.length);
+      
     expect(1).toBe(diasProximoMes[0].dia);
     expect(2).toBe(diasProximoMes[1].dia);
     expect(3).toBe(diasProximoMes[2].dia);
     expect(4).toBe(diasProximoMes[3].dia);
     expect(5).toBe(diasProximoMes[4].dia);
+      
+    expect("mesnaocorrente").toBe(diasProximoMes[0].style);
+    expect("mesnaocorrente").toBe(diasProximoMes[1].style);
+    expect("mesnaocorrente").toBe(diasProximoMes[2].style);
+    expect("mesnaocorrente").toBe(diasProximoMes[3].style);
+    expect("mesnaocorrente").toBe(diasProximoMes[4].style);
   });
+    
+  it('Test pega dias do proximo mes de Maio 2014', function () {
+    var diasProximoMes = scope.getDiasMesProximo(5, 2014)
+    expect(0).toBe(diasProximoMes.length);
+  });    
     
   it('Test pega dias do proximo mes Dez 2014', function () {
     var diasProximoMes = scope.getDiasMesProximo(12, 2014)
@@ -75,6 +108,10 @@ describe('Controller: calendarioController', function () {
     expect(1).toBe(diasProximoMes[0].dia);
     expect(2).toBe(diasProximoMes[1].dia);
     expect(3).toBe(diasProximoMes[2].dia);
+
+    expect("mesnaocorrente").toBe(diasProximoMes[0].style);
+    expect("mesnaocorrente").toBe(diasProximoMes[1].style);
+    expect("mesnaocorrente").toBe(diasProximoMes[2].style);
   });
     
   it('Test ir para mes 2'), function () {

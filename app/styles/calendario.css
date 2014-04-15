@@ -12,7 +12,7 @@
 }
 
 .diastyle, .diatitulo {
-    list-style-type: none;    
+    list-style-type: none; 
     float: left;
     width: 12%;
     font-size: 12px;
@@ -20,11 +20,14 @@
 }
 
 .diastyle {
-    margin: 1px;
-    background: #F5F5F5;
-    border-color:#F6F6F6;
+    border: solid 1px #F5F5F5;
     height: 82px;
     padding-left: 5px;
+}
+
+.mesnaocorrente {
+    background: #f9f9f9;
+    color: #757575;
 }
 
 .diatitulo {
