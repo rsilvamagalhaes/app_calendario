@@ -41,9 +41,16 @@ describe('Controller: calendarioController', function () {
     
   it('Test pega quantidade de dias do mes de janeiro 2014', function () {
     var dias = scope.getDias(0, 2014);
+      
     expect(35).toBe(dias.length);
     expect(29).toBe(dias[0].dia);
     expect(1).toBe(dias[dias.length-1].dia);
+    
+    var length = dias.length;
+    expect("mesnaocorrente").toBe(dias[0].style);
+    expect("mesnaocorrente").toBe(dias[1].style);
+    expect("mesnaocorrente").toBe(dias[2].style);
+    expect("mesnaocorrente").toBe(dias[length-1].style);
   });
 
   it('Test pega quantidade de dias do mes de fevereiro 2014', function () {
@@ -52,6 +59,14 @@ describe('Controller: calendarioController', function () {
     expect(35).toBe(dias.length);
     expect(26).toBe(dias[0].dia);
     expect(1).toBe(dias[dias.length-1].dia);
+    
+    var length = dias.length;
+    expect("mesnaocorrente").toBe(dias[0].style);
+    expect("mesnaocorrente").toBe(dias[1].style);
+    expect("mesnaocorrente").toBe(dias[2].style);
+    expect("mesnaocorrente").toBe(dias[3].style);
+    expect("mesnaocorrente").toBe(dias[4].style);
+    expect("mesnaocorrente").toBe(dias[length-1].style);      
   });    
     
   it('Test pega quantidade de dias do mes de marco 2014', function () {
@@ -59,6 +74,19 @@ describe('Controller: calendarioController', function () {
     expect(42).toBe(dias.length);
     expect(23).toBe(dias[0].dia);
     expect(5).toBe(dias[dias.length-1].dia);
+
+    var length = dias.length;
+    expect("mesnaocorrente").toBe(dias[0].style);
+    expect("mesnaocorrente").toBe(dias[1].style);
+    expect("mesnaocorrente").toBe(dias[2].style);
+    expect("mesnaocorrente").toBe(dias[3].style);
+    expect("mesnaocorrente").toBe(dias[4].style);
+    expect("mesnaocorrente").toBe(dias[5].style);
+    expect("mesnaocorrente").toBe(dias[length-1].style);
+    expect("mesnaocorrente").toBe(dias[length-2].style);
+    expect("mesnaocorrente").toBe(dias[length-3].style);
+    expect("mesnaocorrente").toBe(dias[length-4].style);
+    expect("mesnaocorrente").toBe(dias[length-5].style);  
   });    
 
   it('Test pega quantidade de dias do mes de abril 2014', function () {
@@ -66,8 +94,135 @@ describe('Controller: calendarioController', function () {
     expect(35).toBe(dias.length);
     expect(30).toBe(dias[0].dia);
     expect(3).toBe(dias[dias.length-1].dia);
-  });        
+
+    var length = dias.length;
+    expect("mesnaocorrente").toBe(dias[0].style);
+    expect("mesnaocorrente").toBe(dias[1].style);
+    expect("mesnaocorrente").toBe(dias[length-1].style);
+    expect("mesnaocorrente").toBe(dias[length-2].style);
+    expect("mesnaocorrente").toBe(dias[length-3].style);
+  });
+
+  it('Test pega quantidade de dias do mes de maio 2014', function () {
+    var dias = scope.getDias(4, 2014);
+    expect(35).toBe(dias.length);
+    expect(27).toBe(dias[0].dia);
+    expect(31).toBe(dias[dias.length-1].dia);
+
+    expect("mesnaocorrente").toBe(dias[0].style);
+    expect("mesnaocorrente").toBe(dias[1].style);
+    expect("mesnaocorrente").toBe(dias[2].style);
+    expect("mesnaocorrente").toBe(dias[3].style);
+  });
     
+  it('Test pega quantidade de dias do mes de junho 2014', function () {
+    var dias = scope.getDias(5, 2014);
+    expect(35).toBe(dias.length);
+    expect(1).toBe(dias[0].dia);
+    expect(5).toBe(dias[dias.length-1].dia);
+
+    var length = dias.length;
+    expect("mesnaocorrente").toBe(dias[length-1].style);
+    expect("mesnaocorrente").toBe(dias[length-2].style);
+    expect("mesnaocorrente").toBe(dias[length-3].style);
+    expect("mesnaocorrente").toBe(dias[length-4].style);
+    expect("mesnaocorrente").toBe(dias[length-5].style);        
+  });    
+
+  it('Test pega quantidade de dias do mes de julho 2014', function () {
+    var dias = scope.getDias(6, 2014);
+    expect(35).toBe(dias.length);
+    expect(29).toBe(dias[0].dia);
+    expect(2).toBe(dias[dias.length-1].dia);
+    
+    var length = dias.length;
+    expect("mesnaocorrente").toBe(dias[0].style);
+    expect("mesnaocorrente").toBe(dias[1].style);
+    expect("mesnaocorrente").toBe(dias[length-1].style);
+    expect("mesnaocorrente").toBe(dias[length-2].style);
+  });    
+
+  it('Test pega quantidade de dias do mes de agosto 2014', function () {
+    var dias = scope.getDias(7, 2014);
+    expect(42).toBe(dias.length);
+    expect(27).toBe(dias[0].dia);
+    expect(6).toBe(dias[dias.length-1].dia);
+
+    var length = dias.length;
+    expect("mesnaocorrente").toBe(dias[0].style);
+    expect("mesnaocorrente").toBe(dias[1].style);
+    expect("mesnaocorrente").toBe(dias[2].style);
+    expect("mesnaocorrente").toBe(dias[3].style);
+    expect("mesnaocorrente").toBe(dias[4].style);
+    expect("mesnaocorrente").toBe(dias[length-1].style);
+    expect("mesnaocorrente").toBe(dias[length-2].style);
+    expect("mesnaocorrente").toBe(dias[length-3].style);
+    expect("mesnaocorrente").toBe(dias[length-4].style);
+    expect("mesnaocorrente").toBe(dias[length-5].style);
+    expect("mesnaocorrente").toBe(dias[length-6].style);
+  });
+
+  it('Test pega quantidade de dias do mes de setembro 2014', function () {
+    var dias = scope.getDias(8, 2014);
+    expect(35).toBe(dias.length);
+    expect(31).toBe(dias[0].dia);
+    expect(4).toBe(dias[dias.length-1].dia);
+
+    var length = dias.length;
+    expect("mesnaocorrente").toBe(dias[0].style);
+    expect("mesnaocorrente").toBe(dias[length-1].style);
+    expect("mesnaocorrente").toBe(dias[length-2].style);
+    expect("mesnaocorrente").toBe(dias[length-3].style);
+    expect("mesnaocorrente").toBe(dias[length-4].style);
+  });
+
+  it('Test pega quantidade de dias do mes de outubro 2014', function () {
+    var dias = scope.getDias(9, 2014);
+    expect(35).toBe(dias.length);
+    expect(28).toBe(dias[0].dia);
+    expect(1).toBe(dias[dias.length-1].dia);
+
+    var length = dias.length;
+    expect("mesnaocorrente").toBe(dias[0].style);
+    expect("mesnaocorrente").toBe(dias[1].style);
+    expect("mesnaocorrente").toBe(dias[2].style);
+    expect("mesnaocorrente").toBe(dias[length-1].style);
+  });
+
+  it('Test pega quantidade de dias do mes de novembro 2014', function () {
+    var dias = scope.getDias(10, 2014);
+    expect(42).toBe(dias.length);
+    expect(26).toBe(dias[0].dia);
+    expect(6).toBe(dias[dias.length-1].dia);
+
+    var length = dias.length;
+    expect("mesnaocorrente").toBe(dias[0].style);
+    expect("mesnaocorrente").toBe(dias[1].style);
+    expect("mesnaocorrente").toBe(dias[2].style);
+    expect("mesnaocorrente").toBe(dias[3].style);
+    expect("mesnaocorrente").toBe(dias[4].style);
+    expect("mesnaocorrente").toBe(dias[5].style);  
+    expect("mesnaocorrente").toBe(dias[length-1].style);
+    expect("mesnaocorrente").toBe(dias[length-2].style);
+    expect("mesnaocorrente").toBe(dias[length-3].style);
+    expect("mesnaocorrente").toBe(dias[length-4].style);
+    expect("mesnaocorrente").toBe(dias[length-5].style);
+    expect("mesnaocorrente").toBe(dias[length-6].style);      
+  });
+
+  it('Test pega quantidade de dias do mes de dezembro 2014', function () {
+    var dias = scope.getDias(11, 2014);
+    expect(35).toBe(dias.length);
+    expect(30).toBe(dias[0].dia);
+    expect(3).toBe(dias[dias.length-1].dia);
+
+    var length = dias.length;
+    expect("mesnaocorrente").toBe(dias[0].style);
+    expect("mesnaocorrente").toBe(dias[length-1].style);
+    expect("mesnaocorrente").toBe(dias[length-2].style);
+    expect("mesnaocorrente").toBe(dias[length-3].style);
+  });
+
   it('Test pega dia da semana', function () {
     expect("Domingo").toBe(scope.getDiaSemana(0));
     expect("Quarta").toBe(scope.getDiaSemana(3));
